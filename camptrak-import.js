@@ -1,4 +1,4 @@
-plugin('camptrack-import', function(backend, frontend) {
+plugin('camptrak-import', function(backend, frontend) {
     backend(function(Canteen, emit, data) {
         Canteen.db.accounts();
         console.log(data.import);
