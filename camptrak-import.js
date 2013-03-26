@@ -6,8 +6,6 @@ plugin('camptrak-import', function(backend, frontend) {
     });
     
     frontend(function(Canteen) {
-        Canteen.button('accounts', 'import', function() {
-            Canteen.import();
-        });
+        Canteen.button('accounts', 'import', Canteen.import);
     });
 });
