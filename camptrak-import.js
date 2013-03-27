@@ -15,7 +15,7 @@ plugin('camptrak-import', function(backend, frontend) {
             if(i === 0) {
                 template = rows;
             } else {
-                var o = {};
+                var o = {}, fail = false;
                 
                 rows.forEach(function(v, i, a) {
                     var k = dbRel[template[i]];
@@ -23,12 +23,16 @@ plugin('camptrak-import', function(backend, frontend) {
                     if(k === 'balance') {
                         o[k] = Canteen.cash(v.replace('(', '').replace(')', ''));
                         Canteen.log(o[k]);
+                    } else if(Canteen.trim(v) === '') {
+                        fail = true;
                     } else {
                         o[k] = v;
                     }
                 });
                 
-                dbInsert.push(o);
+                if(fail === false) {
+                    dbInsert.push(o);
+                }
             }
         });
         //emit('/');
