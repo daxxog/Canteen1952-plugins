@@ -1,5 +1,5 @@
 plugin('camptrak-import', function(backend, frontend) {
-    backend(function(Canteen, emit, data) {
+    backend('import', function(Canteen, emit, data) {
         Canteen.db.accounts();
         console.log(data.import);
         emit({"json": true});
