@@ -7,7 +7,7 @@ plugin('camptrak-import', function(backend, frontend) {
                 "First Name": 'first',
                 "Last Name": 'last',
                 "Spending Balance": 'balance'
-            }, dbInsert, template;
+            }, dbInsert = [], template;
         
         lines.forEach(function(v, i, a) {
             var rows = v.split(',');
