@@ -2,6 +2,6 @@
     "camptrak-import": {
         "name": "CampTrak accounts import",
         "description": "Import accounts from CampTrak software",
-        "version": "0.0.1"
+        "version": "0.0.2"
     }
 }
