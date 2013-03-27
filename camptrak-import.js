@@ -1,7 +1,5 @@
 plugin('camptrak-import', function(backend, frontend) {
     backend('import', function(Canteen, emit, data) {
-        Canteen.db.accounts();
-
         var lines = data.import.replace(/\r/gm, '').split('\n'),
             dbRel = {
                 "First Name": 'first',
