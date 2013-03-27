@@ -4,7 +4,7 @@ plugin('camptrak-import', function(backend, frontend) {
         //Canteen.log(data.import);
         var lines = data.import.replace(/\r/gm, '').split('\n');
         lines.forEach(function(v, i, a) {
-            Canteen.log(v.split(','));
+            Canteen.log(i, v.split(','));
         });
         //emit('/');
         emit({"json": true});
