@@ -18,7 +18,13 @@ plugin('camptrak-import', function(backend, frontend) {
                 var o = {};
                 
                 rows.forEach(function(v, i, a) {
-                    o[dbRel[template[i]]] = v;
+                    var k = dbRel[template[i]];
+                    
+                    if(k === 'balance') {
+                        o[k] = Canteen.cash(v);
+                    } else {
+                        o[k] = v;
+                    }
                 });
                 
                 dbInsert.push(o);
