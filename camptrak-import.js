@@ -2,7 +2,7 @@ plugin('camptrak-import', function(backend, frontend) {
     backend('import', function(Canteen, emit, data) {
         Canteen.db.accounts();
         //Canteen.log(data.import);
-        Canteen.log(data.import.split('\n'));
+        Canteen.log(data.import.replace(/\r/gm, '').split('\n'));
         //emit('/');
         emit({"json": true});
     });
