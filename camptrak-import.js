@@ -1,3 +1,10 @@
+/* camptrak-import
+ * A Canteen1952 plugin for importing from CampTrak
+ * (c) 2013 David (daXXog) Volm ><> + + + <><
+ * Released under Apache License, Version 2.0:
+ * http://www.apache.org/licenses/LICENSE-2.0.html  
+ */
+ 
 plugin('camptrak-import', function(backend, frontend) {
     backend('import', function(Canteen, emit, data) {
         var lines = data.import.replace(/\r/gm, '').split('\n'),
@@ -34,7 +41,7 @@ plugin('camptrak-import', function(backend, frontend) {
         });
         
         Canteen.db.accounts.insert(dbInsert, function() {
-            emit({"json": dbInsert});
+            emit('./');
         });
     });
     
