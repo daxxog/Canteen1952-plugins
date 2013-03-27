@@ -3,7 +3,11 @@ plugin('camptrak-import', function(backend, frontend) {
         Canteen.db.accounts();
         //Canteen.log(data.import);
         var lines = data.import.replace(/\r/gm, '').split('\n'),
-            template;
+            dbRel = {
+                "First Name": 'first',
+                "Last Name": 'last',
+                "Spending Balance": 'balance'
+            }, template;
         
         lines.forEach(function(v, i, a) {
             var rows = v.split(',');
@@ -12,6 +16,7 @@ plugin('camptrak-import', function(backend, frontend) {
                 template = rows;
             } else {
                 rows.forEach(function(v, i, a) {
+                    Canteen.log(dbRel[v]);
                     Canteen.log(template);
                 });
             }
