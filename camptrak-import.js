@@ -16,8 +16,7 @@ plugin('camptrak-import', function(backend, frontend) {
                 template = rows;
             } else {
                 rows.forEach(function(v, i, a) {
-                    Canteen.log(dbRel[v]);
-                    Canteen.log(template);
+                    Canteen.log(dbRel[template[i]]);
                 });
             }
         });
