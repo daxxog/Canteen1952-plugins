@@ -1,7 +1,7 @@
 plugin('camptrak-import', function(backend, frontend) {
     backend('import', function(Canteen, emit, data) {
         Canteen.db.accounts();
-        //Canteen.log(data.import);
+
         var lines = data.import.replace(/\r/gm, '').split('\n'),
             dbRel = {
                 "First Name": 'first',
@@ -21,8 +21,7 @@ plugin('camptrak-import', function(backend, frontend) {
                     var k = dbRel[template[i]];
                     
                     if(k === 'balance') {
-                        o[k] = Canteen.cash(v.replace('(', '').replace(')', ''));
-                        Canteen.log(o[k]);
+                        o[k] = v.replace('(', '').replace(')', '');
                     } else if(Canteen.trim(v) === '') {
                         fail = true;
                     } else {
@@ -35,8 +34,10 @@ plugin('camptrak-import', function(backend, frontend) {
                 }
             }
         });
-        //emit('/');
-        emit({"json": dbInsert});
+        
+        Canteen.db.accounts.insert(dbInsert, function() {
+            emit({"json": dbInsert});
+        });
     });
     
     frontend(function(Canteen) {
