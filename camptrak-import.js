@@ -7,7 +7,7 @@ plugin('camptrak-import', function(backend, frontend) {
                 "First Name": 'first',
                 "Last Name": 'last',
                 "Spending Balance": 'balance'
-            }, template;
+            }, dbInsert, template;
         
         lines.forEach(function(v, i, a) {
             var rows = v.split(',');
@@ -15,13 +15,17 @@ plugin('camptrak-import', function(backend, frontend) {
             if(i === 0) {
                 template = rows;
             } else {
+                var o = {};
+                
                 rows.forEach(function(v, i, a) {
-                    Canteen.log(dbRel[template[i]]);
+                    o[dbRel[template[i]]] = v;
                 });
+                
+                dbInsert.push(o);
             }
         });
         //emit('/');
-        emit({"json": true});
+        emit({"json": dbInsert});
     });
     
     frontend(function(Canteen) {
