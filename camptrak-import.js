@@ -21,7 +21,7 @@ plugin('camptrak-import', function(backend, frontend) {
                     var k = dbRel[template[i]];
                     
                     if(k === 'balance') {
-                        o[k] = Canteen.cash(v);
+                        o[k] = Canteen.cash(v.replace('(', '').replace(')', ''));
                     } else {
                         o[k] = v;
                     }
