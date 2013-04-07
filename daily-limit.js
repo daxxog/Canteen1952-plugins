@@ -15,7 +15,7 @@ plugin('daily-limit', function(backend, frontend, use) {
             data.accounts.forEach(function(v, i, a) {
                 var h = v._id.toString();
                     
-                pdf.txt(Canteen.nameFormat(v) + ' balance: ' + Canteen.cashFormat(v.balance) + ' spent today: ' + Canteen.cashFormat(data.totals[h]));
+                pdf.txt(Canteen.nameFormat(v) + '  - balance: ' + Canteen.cashFormat(v.balance) + ' spent today: ' + Canteen.cashFormat(data.totals[h]));
             });
         }
         
