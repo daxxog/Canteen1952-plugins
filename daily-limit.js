@@ -7,7 +7,7 @@
  
 plugin('daily-limit', function(backend, frontend, use) {
     backend('dlimitreport', function(Canteen, emit, data) {
-        
+        Canteen.log(data);
     });
 
     frontend(function(Canteen) {
