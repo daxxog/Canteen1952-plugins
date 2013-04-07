@@ -3,5 +3,10 @@
         "name": "CampTrak accounts import",
         "description": "Import accounts from CampTrak software",
         "version": "0.0.2"
+    },
+    "daily-limit": {
+        "name": "Daily spending limit + report",
+        "description": "Set a daily spending limit for all accounts",
+        "version": "0.0.1"
     }
 }
