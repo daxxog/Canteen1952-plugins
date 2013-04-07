@@ -17,6 +17,8 @@ plugin('daily-limit', function(backend, frontend, use) {
                     
                 pdf.txt(Canteen.nameFormat(v) + '  - balance: ' + Canteen.cashFormat(v.balance) + ' spent today: ' + Canteen.cashFormat(data.totals[h]));
             });
+        } else {
+            pdf.txt('No recent transactions. (7 days)');
         }
         
         emit({
