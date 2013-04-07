@@ -7,7 +7,15 @@
  
 plugin('daily-limit', function(backend, frontend, use) {
     backend('dlimitreport', function(Canteen, emit, data) {
-        Canteen.log(data);
+        var pdf = Canteen.pdf();
+        
+        data.accounts.forEach(function(v, i, a) {
+            pdf.txt(Canteen.nameFormat(v) + ' ' + Canteen.cashFormat(v.balance));
+        });
+        
+        emit({
+            'id': pdf.out()
+        });
     });
 
     frontend(function(Canteen) {
