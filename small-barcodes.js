@@ -5,7 +5,7 @@
  * http://www.apache.org/licenses/LICENSE-2.0.html  
  */
  
-plugin('small-barcodes', function() {
+plugin('small-barcodes', function(backend, frontend) {
     backend('small-barcodes', function(Canteen, emit, data) {
         emit(true);
     });
