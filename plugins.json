@@ -8,5 +8,10 @@
         "name": "Daily spending limit + report",
         "description": "Set a daily spending limit for all accounts",
         "version": "0.0.2"
+    },
+    "small-barcodes": {
+        "name": "Small barcodes",
+        "description": "Replace large barcodes with small ones",
+        "version": "0.0.1"
     }
 }
