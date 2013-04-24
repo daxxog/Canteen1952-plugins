@@ -18,5 +18,10 @@
         "name": "Group mode",
         "description": "Treat an account as a \"group\" with a counter",
         "version": "0.0.1"
+    },
+    "staff-discounts": {
+        "name": "Staff discounts",
+        "description": "Allow discounts by amount or percent",
+        "version": "0.0.1"
     }
 }
