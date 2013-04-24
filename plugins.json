@@ -13,5 +13,10 @@
         "name": "Small barcodes",
         "description": "Replace large barcodes with small ones",
         "version": "0.0.1"
+    },
+    "group-mode": {
+        "name": "Group mode",
+        "description": "Treat an account as a \"group\" with a counter",
+        "version": "0.0.1"
     }
 }
