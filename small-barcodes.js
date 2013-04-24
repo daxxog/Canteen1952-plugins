@@ -6,6 +6,12 @@
  */
  
 plugin('small-barcodes', function() {
+    backend('small-barcodes', function(Canteen, emit, data) {
+        emit(true);
+    });
+    
+    frontend(function() {
+    });
 }, {
     use: 'smallbarcodes'
 });
