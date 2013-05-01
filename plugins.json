@@ -21,7 +21,7 @@
     },
     "staff-discounts": {
         "name": "Staff discounts",
-        "description": "Allow discounts by amount or percent",
+        "description": "Allow discounts by percent",
         "version": "0.0.1"
     }
 }
