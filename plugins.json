@@ -23,5 +23,10 @@
         "name": "Staff discounts",
         "description": "Allow discounts by percent",
         "version": "0.0.1"
+    },
+    "laffy-taffy": {
+        "name": "Laffy Taffy mod",
+        "description": "Buy one, get one free!",
+        "version": "0.0.1"
     }
 }
